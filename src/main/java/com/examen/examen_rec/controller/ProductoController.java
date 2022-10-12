@@ -31,11 +31,8 @@ public class ProductoController {
 	@PostMapping
 	public ResponseEntity<?> create (@RequestBody Producto producto) {
 		
-		String descripcion = producto.getDescripcion();
 		if(producto.getDescripcion().length() > 100) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("La cantidad de caracteres no puede ser mas de 100");
-		} else if() {
-			
 		}
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(proServ.save(producto));
